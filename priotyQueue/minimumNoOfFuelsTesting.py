@@ -9,10 +9,7 @@ def minimumFuelStation(stations, startFuel, target):
     v = []
     v.append(target)
     v.append(0)
-    # print(v)
-    
     stations.append(v)
-    # print(stations)
     
     pq = []
     ans = 0
@@ -20,8 +17,8 @@ def minimumFuelStation(stations, startFuel, target):
     for i in range(n):
         if stations[i][0] > startFuel:
             while startFuel < stations[i][0] and pq:
-                k  = -heappop(pq)
-                startFuel += k
+               
+                startFuel += -heappop(pq)
                 ans += 1
             
         if stations[i][0] > startFuel:
@@ -29,6 +26,5 @@ def minimumFuelStation(stations, startFuel, target):
         
         heappush(pq, -stations[i][1])
     return ans
-    
 
 print(minimumFuelStation(stations, startFuel,  target))
