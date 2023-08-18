@@ -1,7 +1,7 @@
 def nger(arr):
     n = len(arr)
     ans = [-1]*n
-    stack = []
+    stack = [] 
     for i in range(n-1, -1 , -1):
         while(len(stack) != 0 and stack[-1] <= arr[i]):
             stack.pop()
